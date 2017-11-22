@@ -1,0 +1,145 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<div style="display:none">
+   <audio width="12" height="32" src="aud/backGame.mp3" controls="controls" volume="100" autoplay="autoplay" loop preload=""></audio>
+
+	</div>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>HEBI</title>
+		<meta name="description" content="">
+		<meta name="author" content="satur">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<script src="alertify/lib/alertify.min.js" type="text/javascript"></script>
+		<script src="alertify/lib/ajax.js" type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css" href="alertify/lib/bootstrap.css">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="stylesheet" type="text/css" href="alertify/lib/alertify.core.css">
+		<link rel="stylesheet" type="text/css" href="alertify/lib/alertify.default.css">
+	</head>
+	<style>
+		canvas {
+			border: 4px solid black;
+			border-color:  green;
+			-webkit-box-shadow: -1px 2px 20px -1px rgba(0,0,0,0.43);
+			-moz-box-shadow: -1px 2px 20px -1px rgba(0,0,0,0.43);
+			box-shadow: -1px 2px 20px -1px rgba(0,0,0,0.43);
+			margin-top: 12px;
+		}
+		div 
+		{
+			border: 2px solid black;
+		}
+		h3
+		{
+			text-align: center;
+		}
+		img
+		{
+			width: 55%;
+		}
+		h1
+		{
+			color: red;
+			padding: 3px;
+		}
+		div.info{
+			-webkit-box-shadow: -1px 2px 20px -1px rgba(0,0,0,0.43);
+			-moz-box-shadow: -1px 2px 20px -1px rgba(0,0,0,0.43);
+			box-shadow: -1px 2px 20px -1px rgba(0,0,0,0.43);
+			width: 20%;
+			height: 600px;
+			border-width: 0px;
+			/*border-radius: 6%;*/
+			position: absolute;
+			left: 3.5%;
+			margin-top: 12px;
+		}
+		div.number_level{
+			-webkit-box-shadow: -1px 2px 20px -1px rgba(0,0,0,0.43);
+			-moz-box-shadow: -1px 2px 20px -1px rgba(0,0,0,0.43);
+			box-shadow: -1px 2px 20px -1px rgba(0,0,0,0.43);
+			width: 20%; border-width: 0px; /* border-radius: 6%; */ position: absolute;  left: 76%; margin-top: 12px;
+		}
+		p#metadescripcion{
+			width: 450px;
+			text-align: justify;
+			margin-left: 390px;
+		}
+		.imagenhebiDescripcion{
+			max-width:  30%;
+			margin-top: -420px;
+			margin-left: 20px;
+		}
+	</style>
+	<div class="info">
+
+		<h3> &#160; Practica los números en ingles, Jugando Hebi. </h3>
+		<button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-green">Acerca de HEBI</button><br><br><br>
+
+	 <center>
+	 <img src="img/snake-game.png"><br><br>
+	 <p>PLAY</p>
+	 <img src="img/teclas.png">
+	  <p>PAUSE </p><img src="img/space.png">
+	  <br>
+	 </center>	
+	</div>
+
+	<div class="number_level" >
+		<h3> &#160; ¿Hasta que número puedes llegar?</h3>
+	 <center>
+	 <!--img src="img/snake-game.png"-->
+	 
+	 <H2 >Numbers:</H2>
+	 <h1 id="Mostrarnumero"></h1>
+	 <h1 id="Mostrarnumerol"></h1>
+	
+
+	 </center>	
+	</div>
+	<body 
+	onkeydown="control(event);"
+	onkeypress="pause(event);"
+
+
+	>
+	
+		<script src="js/snake.js"></script>
+		<center>
+		<canvas id="canvas" width="600" height="600">
+	    </canvas>
+</center>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  
+  
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <h2><B>Acerca de "HEBI"</B></h2>
+        <p id="metadescripcion">HEBI es un juego para niños (4-10 años) que permite llevar a cabo la práctica de los números en inglés, además fortalece procesos cognitivos como la sensación, atención y percepción. <br><br> Este juego está basado en la idea original de <b>P. Trefonas (1978).</b><br>En el juego, el jugador o usuario controla una larga y delgada criatura, semejante a una serpiente, que vaga alrededor de un plano delimitado, recogiendo alimentos (comida), tratando de evitar golpear a su propia cola o las "paredes" que rodean el área de juego. Cada vez que la serpiente se come un pedazo de comida, la cola crece más y los números aparecen de forma sonora y visual, provocando que aumente la dificultad del juego. El usuario controla la dirección de la cabeza de la serpiente (arriba, abajo, izquierda o derecha) y el cuerpo de la serpiente la sigue. Además, el jugador puede detener el movimiento de la serpiente, mientras que el juego está en marcha. </p>
+        <img class="imagenhebiDescripcion"  src="img/hebi.png">
+      </div>
+    </div>
+  </div>
+
+	</body>
+</html>
+
